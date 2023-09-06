@@ -1,0 +1,23 @@
+{
+  "name": "cours-bitcoin",
+  "version": "1.0.0",
+  "description": "mini programme permettant d'afficher le cours du bitcoin ",
+  "main": "btc.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Khalid0306/cours-bitcoin.git"
+  },
+  "author": "Khalid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Khalid0306/cours-bitcoin/issues"
+  },
+  "homepage": "https://github.com/Khalid0306/cours-bitcoin#readme",
+  "dependencies": {
+    "axios": "^1.5.0"
+  }
+}
