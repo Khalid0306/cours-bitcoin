@@ -16,21 +16,22 @@ async function main() {
     : 'USD';
   
     // Trycatch est necessaire pour gérer les potentielles erreurs d'Axios
-    try {
+    try { 
+    
+    const url = 'https://api.coindesk.com/v1/bpi/currentprice.json'
+    
     //Chemin pour accéder à l'API de Coindesk(request http) 
-    const response = await axios.get(
-      "https://api.coindesk.com/v1/bpi/currentprice.json"
-    );
+    const { data } = await axios.get(url);
 
     //Reponse en cas de saisi de devise inconnue
-    if (!response.data.bpi[currency]) {
+    if (!data.data.bpi[currency]) {
       throw new Error("Devise inconnue");
     }
 
     //Obtenir les infos concernant la dernière màj sur les crypto
-    const updatedAt = response.data.time.updated;
+    const updatedAt = data.data.time.updated;
     //Obtenir le taux des crypto
-    const rate = response.data.bpi[currency].rate;
+    const rate = data.data.bpi[currency].rate;
     //afficher le résultat
     console.log(`> 1 BTC = ${rate} ${currency} (${updatedAt})`);
   } catch (error) {
